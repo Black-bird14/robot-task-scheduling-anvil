@@ -3,12 +3,37 @@ container:
   type: HtmlTemplate
   properties: {html: '@theme:standard-page.html'}
 components:
-- type: ColumnPanel
-  properties: {col_widths: '{}'}
-  name: content_panel
-  layout_properties: {slot: default}
-  components: []
 - type: FlowPanel
   properties: {}
   name: navbar_links
   layout_properties: {slot: nav-right}
+  components: []
+- name: label_1
+  properties: {text: RBT Chat Interface}
+  type: Label
+  layout_properties: {slot: title}
+- type: ColumnPanel
+  properties: {col_widths: '{}', col_spacing: none, role: tonal-card}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - name: convo_box
+    properties: {item_template: Form1.ItemTemplate1, role: elevated-card}
+    type: RepeatingPanel
+    layout_properties: {grid_position: 'QVESFP,GDACRI'}
+  - name: flow_panel_1
+    properties: {}
+    type: FlowPanel
+    layout_properties: {grid_position: 'MHODGI,KUYXSR'}
+    components:
+    - name: msg
+      properties: {height: 73, role: outlined, placeholder: Type Instructions here...,
+        auto_expand: true}
+      type: TextArea
+      layout_properties: {width: 963, expand: false}
+  - name: send
+    properties: {text: '', role: filled-button, icon: 'fa:send', spacing_above: none,
+      align: right, bold: false}
+    type: Button
+    layout_properties: {grid_position: 'ZUGWDQ,OUUCIO'}
+    event_bindings: {click: send__click}
