@@ -8,11 +8,13 @@ class Form1(Form1Template):
     self.init_components(**properties)
     self.chat_history = anvil.server.call('get_chat_history')
     self.refresh_chat()
+    _, self.img= anvil.server.call('set_env')
+    self.chat_history['outputs']=self.img
 
   def refresh_chat(self):
       messages = []
       user_inputs = self.chat_history["past_user_inputs"]
-      responses = self.chat_history["llm_outputs"]
+      responses = self.chat_history["outputs"]
       for idx in range(len(user_inputs)):
           messages.append({"from": "user", "text": user_inputs[idx]})
           messages.append({"from": "robot", "text": responses[idx]})
