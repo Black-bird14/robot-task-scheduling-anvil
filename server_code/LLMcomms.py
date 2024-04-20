@@ -1,5 +1,4 @@
 import anvil.server
-import requests
 
 @anvil.server.callable
 def get_chat_history():
@@ -13,6 +12,6 @@ def get_chat_history():
 @anvil.server.callable
 def send_message(message):
   chat_history = get_chat_history()
-  model_output = 
+  model_output = anvil.server.call('llm_runner')
   anvil.server.session["chat_history"] = model_output["chat_history"]
   return model_output["chat_history"]

@@ -8,8 +8,11 @@ class Form1(Form1Template):
     self.init_components(**properties)
     self.chat_history = anvil.server.call('get_chat_history')
     self.refresh_chat()
+    self.env_description= anvil.server.call('send_description')
     _, self.img= anvil.server.call('set_env')
-    self.chat_history['outputs']=self.img
+    self.chat_history['outputs'].append(self.img)
+    self.chat_history['outputs'].append(self.env_description)
+    self.refresh_chat()
 
   def refresh_chat(self):
       messages = []
