@@ -5,7 +5,7 @@ def get_chat_history():
   if "chat_history" not in anvil.server.session:
       anvil.server.session["chat_history"] = {
           "outputs": ["Welcome to RBT, do you want to see the demo? Say No if you would rather submit instructions yourself."],
-          "past_user_inputs": [""]
+          "past_user_inputs": ["..."]
       }
   return anvil.server.session["chat_history"]
 

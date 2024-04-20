@@ -3,6 +3,15 @@
  **/
 
 /* Stop panel-cols cutting off drop shadows */
+.anvil-role-message, .anvil-role-bot-message {
+  background-color: #d9d2e9;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.anvil-role-bot-message {
+  background-color: #7a6e9d;
+}
 .anvil-panel-col {
   padding-bottom: 10px;
   margin-bottom: -10px;
@@ -148,6 +157,14 @@ color: %color:On Primary Container%;
 .anvil-role-input-prompt {
   font-size: 16px;
   line-height: 1.5;
+}
+.anvil-role-display-4 {
+  font-size: 112px;
+  font-weight: light;
+}
+
+.anvil-role-text {
+  font-size: 14px;
 }
 
 .anvil-role-body > .label-text, .anvil-role-body .link-text {
