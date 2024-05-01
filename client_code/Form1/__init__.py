@@ -9,7 +9,6 @@ class Form1(Form1Template):
     self.local=False
     self.chat_history = anvil.server.call('get_chat_history')
     self.env_description= anvil.server.call('send_description')
-    print(self.env_description)
     _, self.img= anvil.server.call('set_env')
     self.qNumber=0
     #self.chat_history['outputs'].append(self.img)
